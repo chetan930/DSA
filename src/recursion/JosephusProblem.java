@@ -2,7 +2,7 @@ package recursion;
 
 public class JosephusProblem {
     public static void main(String[] args) {
-        int n=6,k=4;
+        int n=3,k=2;
         System.out.println(josephus(n,k));
     }
 
