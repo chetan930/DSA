@@ -6,7 +6,7 @@ public class GenerateParentheses {
     }
 
     public static void generateParenthese(int n,String curr, int open,int close){
-        if(open==3 && close==3){
+        if(open==n && close==n){
             System.out.println(curr);
             return;
         }
