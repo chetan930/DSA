@@ -1,37 +1,43 @@
 package backtracking;
 
+import java.lang.reflect.Array;
+
 public class PermutationOfArray {
 
     public static void main(String[] args) {
-        int arr[]={1,2,3};
-
-        printPermution(arr,0,arr.length-1);
+//        int arr[]={1,2,3};
+        String str="123";
+        char[] arr= str.toCharArray();
+        printPermutation(arr,0,arr.length-1);
     }
 
-    private static void printPermution(int[] arr, int l, int r) {
+
+    static void printPermutation(char arr[],int l,int r){
         if(l==r){
-            printArray(arr);
+//            printArray(arr);
+            System.out.println(new String(arr));
             return;
         }
 
-        for(int i=l;i<=r;i++){
-            swap(arr,i,l);
-            printPermution(arr,l+1,r);
-            swap(arr,i,l);  //backtracking
+        for (int i = l; i <=r ; i++) {
+            swap(i,l,arr);
+            printPermutation(arr,l+1,r);
+            swap(i,l,arr);
         }
     }
 
-    private static void swap(int[] arr, int i, int l) {
-        int temp=arr[i];
-        arr[i]=arr[l];
-        arr[l]=temp;
-    }
-
-    private static void printArray(int[] arr) {
-        for(int i:arr){
+    static void printArray(char arr[]){
+        for (char i:arr){
             System.out.print(i+" ");
         }
         System.out.println();
+    }
+
+
+    static void swap(int l,int r,char arr[]){
+        char temp=arr[l];
+        arr[l]=arr[r];
+        arr[r]=temp;
     }
 
 
