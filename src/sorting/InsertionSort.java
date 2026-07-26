@@ -2,29 +2,22 @@ package sorting;
 
 public class InsertionSort {
     public static void main(String[] args) {
-        int[] arr ={4,1,8,2,3,7};
+        int arr[]={13,46,24,52,20,9};
 
-//        for (int i = 1; i < arr.length; i++) {
-//            int last=arr[i];
-//            int swapIndex=i-1;
-//            while(swapIndex>=0 && arr[swapIndex]>last){
-//                arr[swapIndex+1]=arr[swapIndex];
-//                swapIndex--;
-//            }
-//
-//            arr[swapIndex+1]=last;
-//
-//        }
-//
-//        for (int a:arr){
-//            System.out.print(a+" ");
-//        }
+        for (int i = 1; i < arr.length; i++) {
+            int j=i-1;
+            int curr=arr[i];
+            while(j>=0 && arr[j]>curr){
+                arr[j+1]=arr[j];
+                j--;
+            }
 
-        int i=0;
-        for (i = 0; i < 20; i++) {
-            break;
-
+            arr[j+1]=curr;
         }
-        System.out.println(i);
+
+
+        for (int k:arr){
+            System.out.print(k+" ");
+        }
     }
 }

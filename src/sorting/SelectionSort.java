@@ -2,15 +2,16 @@ package sorting;
 
 public class SelectionSort {
     public static void main(String[] args) {
-        int[] arr ={4,1,8,2,3,7};
-
-        for (int i = 0; i < arr.length; i++) {
-            int min=i; //assume is  min index
-            for (int j = i+1; j < arr.length; j++) {
+        int arr[]={13,46,24,52,20,9};
+        int n= arr.length;
+        for (int i = 0; i < n-1; i++) {
+            int min=i;
+            for (int j = i+1; j < n; j++) {
                 if(arr[j]<arr[min]){
                     min=j;
                 }
             }
+
             int temp=arr[min];
             arr[min]=arr[i];
             arr[i]=temp;
@@ -18,8 +19,9 @@ public class SelectionSort {
 
         }
 
-        for (int a:arr){
-            System.out.print(a+" ");
+
+        for (int i:arr){
+            System.out.print(i+" ");
         }
     }
 }
